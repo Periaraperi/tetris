@@ -95,7 +95,7 @@ void Tetris::init_static_ui_elements()
     m_movement_dst = {32*2-20,32*4,0,0};
     SDL_QueryTexture(m_movement,nullptr,nullptr,&m_movement_dst.w,&m_movement_dst.h);
 
-    m_next_dst = {0,32*24,0,0};
+    m_next_dst = {0,32*23,0,0};
     SDL_QueryTexture(m_next,nullptr,nullptr,&m_next_dst.w,&m_next_dst.h);
 
     m_game_over_dst = {32*2,32*5,0,0};
@@ -145,7 +145,7 @@ void Tetris::reset()
     m_current_piece = Tetromino(Tetromino_Type(rand()%7));
     m_current_piece.offset(4,-3);
     m_next_piece = Tetromino(Tetromino_Type(rand()%7));
-    m_next_piece.offset(1,24);
+    m_next_piece.offset(1,25);
     m_level = Level::LEVEL_0;
     m_level_score = 0;
     m_total_score = 0;
@@ -256,7 +256,7 @@ void Tetris::update()
         m_current_piece = Tetromino(m_next_piece.get_type());
         m_current_piece.offset(4,-3);
         m_next_piece = Tetromino(Tetromino_Type(rand()%7));
-        m_next_piece.offset(1,24);
+        m_next_piece.offset(1,25);
     }
 }
 
@@ -265,7 +265,7 @@ void Tetris::render()
     SDL_SetRenderDrawColor(m_renderer,0,0,0,255);
     SDL_RenderClear(m_renderer);
 
-    SDL_Rect bottom = {0,32*20,10*32,6*32};
+    SDL_Rect bottom = {0,32*20,10*32,7*32};
     SDL_SetRenderDrawColor(m_renderer,64,63,61,255);
     SDL_RenderFillRect(m_renderer,&bottom);
 
@@ -305,6 +305,7 @@ void Tetris::render()
         Texture_Manager::draw_tex(m_renderer,m_level_playing,m_level_playing_dst);
         Texture_Manager::draw_tex(m_renderer,m_score_playing,m_score_playing_dst);
         Texture_Manager::draw_tex(m_renderer,m_lines_playing,m_lines_playing_dst);
+        Texture_Manager::draw_tex(m_renderer,m_next,m_next_dst);
 
         if(m_game_state==Game_State::GAME_OVER) {
             Texture_Manager::draw_tex(m_renderer,m_game_over,m_game_over_dst);
