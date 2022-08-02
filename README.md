@@ -14,3 +14,4 @@ Cmake is configured accordingly.
 If you use IDE or other compiler, configure SDL accordingly.
 
 # preview
+![](game_preview.gif)
