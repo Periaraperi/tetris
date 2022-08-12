@@ -1,6 +1,14 @@
 # tetris
 simple tetris game with SDL2
 
+# build on linux
+install cmake SDL2 SDL2_ttf according to your distribution
+- mkdir build
+- cd build
+- cmake ..
+- make
+- run program
+
 # build on windows
 I have provided 64 bit SDL2 and SDL2_TTF development package for mingw compiler.
 Cmake is configured accordingly.
