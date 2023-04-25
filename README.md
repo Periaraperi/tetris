@@ -13,5 +13,13 @@ Cmake is configured accordingly.
 <br /> Don't forget to copy sdl2.dll, sdl2_ttf.dll and roboto font files in your executable's directory
 If you use IDE or other compiler, configure SDL accordingly.
 
+# build on linux
+using your distributions package manager download SDL2_ttf library
+- mkdir build
+- cd build
+- cmake ..
+- cmake --build .
+- ./tetris
+
 # preview
 ![](game_preview.gif)
