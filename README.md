@@ -14,7 +14,7 @@ Cmake is configured accordingly.
 If you use IDE or other compiler, configure SDL accordingly.
 
 # build on linux
-using your distributions package manager download SDL2_ttf library
+using your distributions package manager download SDL2 and SDL2_ttf library
 - mkdir build
 - cd build
 - cmake ..
